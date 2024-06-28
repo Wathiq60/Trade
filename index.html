@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1>Trading Calculator</h1>
+        <div class="input-group">
+            <label for="numShares">Number of Shares:</label>
+            <input type="number" id="numShares" value="1" oninput="updateCalculations()">
+        </div>
+        <div class="input-group">
+            <label for="entryPrice">Entry Price (USD):</label>
+            <input type="number" id="entryPrice" placeholder="Enter entry price" oninput="updateCalculations()">
+        </div>
+        <div class="toggle-group">
+            <div id="exitPriceButton" class="toggle-button active" onclick="toggleInputType('exitPrice')">Exit Price (USD)</div>
+            <div id="percentageButton" class="toggle-button" onclick="toggleInputType('percentage')">Percentage Increase (%)</div>
+        </div>
+        <div class="input-group">
+            <label for="exitPrice">Exit Price (USD):</label>
+            <input type="number" id="exitPrice" placeholder="Enter exit price" oninput="updateCalculations()">
+            <span id="exitPriceLabel"></span>
+        </div>
+        <div class="input-group">
+            <label for="percentageIncrease">Percentage Increase (%):</label>
+            <input type="number" id="percentageIncrease" placeholder="Enter percentage increase" oninput="updateCalculations()">
+            <span id="percentageIncreaseLabel"></span>
+        </div>
+        <div class="result">
+            <p>Entry Value (USD): <span id="entryValueUsd"></span></p>
+            <p>Profit (AED): <span id="profitAed" class="value"></span> ROI (%): <span id="roi" class="value"></span></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
